@@ -1,10 +1,10 @@
 alert ('aaaaaaaaaaah');
 
-const nome = document.querySelector("#cadastroInputNome");
-const email = document.querySelector("#cadastroInputEmail");
-const telefone = document.querySelector("#cadastroInputPhone");
-const texto = document.querySelector("#cadastroInputText");
-const botao = document.querySelector('.btn btn-primary');
+const nome = document.querySelector("#nome");
+const email = document.querySelector("#email");
+const telefone = document.querySelector("#telefone");
+const texto = document.querySelector("#texto");
+const botao = document.querySelector("#enviar");
 
 botao.addEventListener('click', function (evento) {
     evento.preventDefault();
@@ -19,14 +19,14 @@ botao.addEventListener('click', function (evento) {
     } else if (email.value == undefined ||
         email.value == null ||
         email.value.trim() == "" ||
-        email.value.length < 0) {
+        e-mail.value.indexOf('@')===-1){
         email.focus();
         alert("Preencha o campo email corretamente")
         return false;
     } else if (telefone.value == undefined ||
         telefone.value == null ||
         telefone.value.trim() == "" ||
-        telefone.value.length <11) {
+        telefone.value.length <11){
         telefone.focus();
         alert("Preencha o campo telefone corretamente")
         return false;
@@ -36,7 +36,7 @@ botao.addEventListener('click', function (evento) {
         texto.value.length >140) {
         texto.focus();
         alert("Preencha o campo mensagem corretamente")
-        return false;
+        return false;}
     document.querySelector('form').submit()
     alert('cadastro realizado com sucesso')
 
